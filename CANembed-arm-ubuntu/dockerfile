@@ -56,6 +56,17 @@ RUN \
 	rm /tmp/gcc-arm-none-eabi.tar.bz2
 ENV PATH="/opt/gcc-arm-none-eabi/bin:${PATH}"
 
+# Ruby
+RUN \
+	apt-get update \
+	&& \
+	apt-get install -y \
+		ruby \
+		ruby-dev \
+		ruby-bundler \
+	&& \
+	rm -rf /var/lib/apt/lists/*
+  
 # AStyle
 RUN \
 	mkdir /opt/astyle \

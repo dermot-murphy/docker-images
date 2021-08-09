@@ -13,7 +13,4 @@ docker run -it -v %cd%:/data %1 cmake --version
 docker run -it -v %cd%:/data %1 make --version
 docker run -it -v %cd%:/data %1 ninja --version
 docker run -it -v %cd%:/data %1 bash --version
-:test
-rd /S /Q builds
-docker run -it -v %cd%:/data %1 pwd && cd cmake-test && mkdir builds && cd builds && cmake -G Ninja .. && cmake --build . && testApp
 :end
